@@ -17,7 +17,7 @@ int main() {
     });
     
     for (int value : values) {
-        std::cout <<value <<std::endl;
+        std::cout << value <<std::endl;
     }
     std::cin.get();
 }
