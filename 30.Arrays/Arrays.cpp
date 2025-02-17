@@ -12,7 +12,7 @@ int main() {
     }
 
     example[2] = 5;
-    // Same as previous row. Increment the pointer by the size of two integers or 8 bytes (pointer type) to access the third array's element.
+    // Same as previous row. Increment the pointer by the size of two integers or 8 bytes (type on which pointer points) to access the third array's element.
     *(ptr + 2) = 6; 
     // Same as previous row.  Increment the pointer by the size of 8 chars or 8 bytes (casted pointer type) to access the third array's element.
     *(int*)((char*)ptr + 8) = 8; 

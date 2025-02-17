@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <string.h>
 
 void PrintString(const std::string& string) {
     std::cout << string << std::endl;

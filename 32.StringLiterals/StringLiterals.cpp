@@ -1,8 +1,9 @@
 #include <iostream>
 #include <string>
+#include <string.h>
 
 int main() {
-    // this is a string literal with a hidden null terminator. That's why the size of the array is 8, not 7 (6 characters + 1 other null terminator in the middle of the string)
+    // this is a string literal with a hidden null terminator. That's why the size of the array is 8, not 7 (6 characters + 1 other null terminator in the middle of the string). Total size is 6 characters and 2 null terminators.
     const char name[8] = "Che\0rno"; 
     std::cout << strlen(name) << std::endl; // prints 3, because strlen stops at the first null terminator
 

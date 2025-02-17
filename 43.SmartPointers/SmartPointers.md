@@ -42,7 +42,7 @@ int main() {
             e0 = sharedEntity;
             // Shared pointer reference counting is 2.
         }
-        // does not call the destructor of Entity. Memory has not been freed. e0 still points to the Entity, but not sharedEntity.
+        // does not call the destructor of Entity. Memory has not been freed. e0 still points to the Entity, but sharedEntity is not.
         // Shared pointer reference counting is 1.
     }
     // automatically calls the destructor of Entity. Memory has been freed. Shared pointer reference counting is 0.

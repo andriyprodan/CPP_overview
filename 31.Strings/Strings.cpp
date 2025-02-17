@@ -2,6 +2,7 @@
 
 int main() {
     const char* name = "Cherno"; // immutable string, this is not heap allocated
+    // char* name  -  still immutable (see 32.StringLiterals/StringLiterals.cpp)
     // delete name; // error: cannot delete expression of type 'const char *'; no destructor called
     // name[2] = 'a'; // error: read-only variable is not assignable
 

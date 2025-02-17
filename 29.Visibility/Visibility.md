@@ -3,10 +3,12 @@
 #include <string>
 
 class Entity {
+private:
+    void Print() {
+        std::cout << X << ", " << Y << std::endl;
+    }
 protected:
     int X, Y;
-
-    void Print() {}
 public:
     Entity() {
         X = 0;

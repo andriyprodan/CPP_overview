@@ -3,7 +3,8 @@
 
 class Printable {
 public:
-    virtual std::string GetClassName() = 0; // pure virtual function (= 0)
+    virtual std::string GetClassName() = 0; // pure virtual function (= 0). This makes the class abstract
+    // An abstract class is a class that cannot be instantiated. It can only be used as a base class for other classes.
 };
 
 

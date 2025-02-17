@@ -30,7 +30,7 @@ int main() {
     PrintName(p); // prints "Cherno"
 
     Entity* entity = p;
-    std::cout << entity->GetName() << std:: endl;
+    std::cout << entity->GetName() << std:: endl; // prints "Cherno"
 
     std::cin.get();
 }
