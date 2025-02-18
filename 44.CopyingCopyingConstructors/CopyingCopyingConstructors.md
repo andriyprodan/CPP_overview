@@ -56,7 +56,7 @@ std::ostream& operator<<(std::ostream& stream, const String& string) {
 
 int main() {
     String string = "Cherno";
-    String second = string;
+    String second = string; // немає конструктору копіювання, тому викликається конструктор за замовчуванням, який просто копіює вказівник на m_Buffer
     std::cout << string << std::endl;
     // m_Buffer is the same pointer for both instances of String
     // so when the destructor of *second* is called, it will try to delete the *m_Buffer* that was already deleted by the destructor of *string*

@@ -19,6 +19,7 @@ int main() {
     std::cin.get();
     s_Finished = true;
 
+    // Функція .join() в класі std::thread використовується для очікування завершення потоку перед тим, як виконання програми продовжиться далі
     worker.join();
     std::cout << "Finished" <<std::endl;
 

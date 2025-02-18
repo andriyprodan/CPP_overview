@@ -20,7 +20,7 @@ int main() {
     // using lambda function as the second parameter
     int a = 5;
     auto lambda = [=](int value) { std::cout<<"Value"<<a<<std::endl; }; 
-    ForEach(values, );
+    ForEach(values, lambda);
 
     std::cin.get();
 }

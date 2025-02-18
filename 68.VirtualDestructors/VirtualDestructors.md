@@ -37,7 +37,7 @@ int main() {
     delete derived; // prints "Derived Destructor", "Base Destructor"
     std::cout << "---------------------" << std::endl;
     Base* poly = new Derived(); // prints "Base Constructor", "Derived Constructor"
-    delete poly; // prints ONLY "Base Destructor"
+    delete poly; // prints ONLY "Base Destructor". "Derived Destructor" is not called. Memory is not freed.
     
     std::cin.get();
 }

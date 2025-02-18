@@ -26,8 +26,6 @@ int main() {
         std::cout << vertices[i] << std::endl;
     }
 
-    vertices.clear(); // free the memory.
-
     // remove particular element at index 1
     vertices.erase(vertices.begin() + 1);
 
@@ -36,6 +34,8 @@ int main() {
     }
 
     Function(vertices);
+
+    vertices.clear(); // free the memory.
 
     std::cin.get();
 }

@@ -8,10 +8,11 @@ struct Vector2 {
 struct Vector4 {
     /* a occupies the same memory as x and y
        b occupies the same memory as z and w
-       So we can represent Vector4 as two Vector2s
+       So we can represent Vector4 as two Vector2
        Or we can represent Vector4 as four floats
        But still this vector occupies memory of only 4 floats,
-         not 8 floats
+         not 8 floats.
+         
     */
 
     union {
