@@ -1,0 +1,290 @@
+<div class="entry-content">
+
+								
+    <figure class="wp-block-image"><img decoding="async" src="https://lh5.googleusercontent.com/vlgRFbTD_WIObcNy8ijZDGegSDxt0Jrc_o5ngCC1VOtrDouMS8abtLaX3XJNhmcTpoJUfA-mIQ7CMwmX5P-c3tF9RJvvftOOrZcrj3bfi2dRAFYw0I0vTULLAxRg-P7hZr1hsnh_GgKidlQ1CLzoGP0" alt=""></figure>
+    
+    
+    
+    <p>Do you want to know the difference between memcpy and memmove?&nbsp;</p>
+    
+    
+    
+    <p>We’ve got you covered with this guide.&nbsp;</p>
+    
+    
+    
+    <p>Memcpy and memmove are built-in C language functions that work similarly—copying memory blocks from one memory address to another within C.&nbsp;</p>
+    
+    
+    
+    <p>However, the two are not the same, and they have varying, specific functions.&nbsp;</p>
+    
+    
+    
+    <p>It’s crucial to know the difference between the two to understand which function to leverage in specific use cases.&nbsp;&nbsp;</p>
+    
+    
+    
+    <p>After all, you need to determine the best tool and method to use, such as when deciding <a href="https://www.fromdev.com/2022/08/when-to-pick-crystal-programming.html" data-wpel-link="internal">when to pick Crystal programming</a> language to develop software.&nbsp;</p>
+    
+    
+    
+    <p>This guide covers the main differences between memcpy and memmove to help you understand how each works and when to use them best.&nbsp;</p>
+    
+    
+    
+    <p>Let’s go.&nbsp;</p>
+    
+    
+    
+    <h2 class="wp-block-heading">Memcpy and memmove: An overview</h2>
+    
+    
+    
+    <p>Memcpy is a C function used for copying a specific number of bytes or data (n characters) from a single location or array (source object) to another (destination object).&nbsp;</p>
+    
+    
+    
+    <p>The function helps you copy or move data across memory locations.&nbsp;</p>
+    
+    
+    
+    <p>Memcpy is crucial since memory, which are electronic components, can’t store infinite data, making it necessary to move your data to other locations to free up some space.&nbsp;</p>
+    
+    
+    
+    <p>Consider the following when using memcpy:</p>
+    
+    
+    
+    <ul>
+    <li>Ensure you copy data to and from objects that don’t overlap, or the behavior will show as undefined.&nbsp;</li>
+    
+    
+    
+    <li>Include a &lt;string.h&gt; header file before using the function.&nbsp;</li>
+    
+    
+    
+    <li>Specify the number of bytes before using the memcpy function to copy the memory areas.&nbsp;</li>
+    
+    
+    
+    <li>Copy memory areas or regions that are the same data type.&nbsp;</li>
+    </ul>
+    
+    
+    
+    <p>The best way to understand the function is to look at <a href="https://sternumiot.com/iot-blog/memcpy-c-function-examples-and-best-practices/" data-wpel-link="external" rel="external noopener noreferrer">memcpy examples and their use cases</a>.&nbsp;</p>
+    
+    
+    
+    <p>Memcpy syntax:</p>
+    
+    
+    
+    <p><strong>void *memcpy(void * restrict dst ,const void * src ,size_t n);</strong></p>
+    
+    
+    
+    <p>Where:&nbsp;</p>
+    
+    
+    
+    <ul>
+    <li>src is the pointer to the source object&nbsp;</li>
+    
+    
+    
+    <li>dst refers to the pointer to the destination object</li>
+    
+    
+    
+    <li>n is the number of bytes you wish to copy.</li>
+    </ul>
+    
+    
+    
+    <p>The memmove function also copies data from one location to another.&nbsp;</p>
+    
+    
+    
+    <p>However, memmove copies the data from the source object first and moves it to the temporary array.&nbsp;</p>
+    
+    
+    
+    <p>Then, the function copies the data from the temporary array to the destination object. It allows you to copy between objects that can overlap.&nbsp;</p>
+    
+    
+    
+    <p>The function prevents an undefined behavior when your source and destination objects overlap.&nbsp;</p>
+    
+    
+    
+    <p>Memmove Syntax:</p>
+    
+    
+    
+    <p><strong>void *memmove(void * restrict dst, const void *src, size_t n);</strong></p>
+    
+    
+    
+    <p>Memmove’s basic parameters are the same as memcpy.&nbsp;</p>
+    
+    
+    
+    <h2 class="wp-block-heading">Implementing memcpy and memmove in C</h2>
+    
+    
+    
+    <p>Generally, it’s best not to create your own memcpy since your standard or compiler library likely has a tailored and efficient memcpy implementation.&nbsp;</p>
+    
+    
+    
+    <p>However, some situations call for creating your own memcpy function to work around certain limitations.&nbsp;</p>
+    
+    
+    
+    <p>You can create a memcpy function with a simple memory-transfer algorithm that reads one byte individually, writing the byte before reading the next.&nbsp;</p>
+    
+    
+    
+    <p>While this algorithm is pretty easy to deploy, it doesn’t always offer optimal performance, especially with memory buses that are wider than 8 bits.&nbsp;</p>
+    
+    
+    
+    <p>As you can see in the code below, lines seven and eight handle the scenario so that the source and destination memory is not NULL.&nbsp;</p>
+    
+    
+    
+    <figure class="wp-block-image"><img decoding="async" src="./image0.png" alt=""></figure>
+    
+    
+    
+    <p>Lines 10 to 15 contain a while loop that copies the data from the source to the destination one at a time and increments the source and destination pointer by one.&nbsp;&nbsp;</p>
+    
+    
+    
+    <p>Similar to memcpy, your standard or compiler library will likely have an efficient memmove function implementation.&nbsp;</p>
+    
+    
+    
+    <p>That being said, unless there are special use cases, avoid creating your own memmove function.&nbsp;</p>
+    
+    
+    
+    <p>Implementing memmove is similar to memcpy.&nbsp;</p>
+    
+    
+    
+    <p>The difference is that it can handle an overlapping scenario through a temporary array.&nbsp;</p>
+    
+    
+    
+    <p>The code below copies all the n characters to a temporary array first, then copies the temporary array data to the destination.&nbsp;</p>
+    
+    
+    
+    <figure class="wp-block-image"><img decoding="async" src="./image.png" alt=""></figure>
+    
+    
+    
+    <h2 class="wp-block-heading">Key differences between memcpy and memmove</h2>
+    
+    
+    
+    <p>Below are the main differences between the memcpy and memmove functions:</p>
+    
+    
+    
+    <ul>
+    <li>Memcpy returns undefined behavior if the memory location that the source and destination pointers point to overlap.&nbsp;</li>
+    </ul>
+    
+    
+    
+    <p>On the other hand, memmove has a defined behavior that can handle overlapping scenarios. If you’re unsure if there is overlapping, your safest bet is to use memmove.</p>
+    
+    
+    
+    <ul>
+    <li>It’s best to use memcpy when forwarding or duplicating copies and memmove when there is overlapping.&nbsp;</li>
+    </ul>
+    
+    
+    
+    <ul>
+    <li>Memmove is generally slower than memcpy because the memmove function uses an extra temporary array to copy data before copying the stored data to the destination.&nbsp;</li>
+    </ul>
+    
+    
+    
+    <h2 class="wp-block-heading">Important considerations when using memcpy and memmove</h2>
+    
+    
+    
+    <p>While the memcpy and memmove functions work well, it’s best to know their limitations before using them, including the following:</p>
+    
+    
+    
+    <ul>
+    <li>The memcpy and memmove functions can show undefined behaviors if you access the source and destination buffer beyond their lengths.&nbsp;</li>
+    </ul>
+    
+    
+    
+    <ul>
+    <li>Memcpy and memmove don’t check the destination and source buffer’s validity.&nbsp;</li>
+    </ul>
+    
+    
+    
+    <ul>
+    <li>The memcpy and memmove functions don’t check the terminal null character.&nbsp;&nbsp;</li>
+    </ul>
+    
+    
+    
+    <ul>
+    <li>Memcpy has limitations. For instance, the memcpy function can fail if the source parameter that is pointed to is in a shared block memory (between processes).</li>
+    </ul>
+    
+    
+    
+    <ul>
+    <li>Memmove allows memory regions to overlap but can require additional overhead than memcpy, including extra memory, resources, etc.&nbsp;</li>
+    </ul>
+    
+    
+    
+    <h2 class="wp-block-heading">Quick summary: memcpy vs memmove</h2>
+    
+    
+    
+    <p>Check out the quick memcpy and memmove comparison below.&nbsp;</p>
+    
+    
+    
+    <figure class="wp-block-table"><table><tbody><tr><td></td><td><strong>memcpy</strong></td><td><strong>memmove</strong></td></tr><tr><td><strong>Purpose</strong></td><td>Copies data directly from the source to the destination.</td><td>Copies data to the temporary buffer or array before copying it to the destination.</td></tr><tr><td><strong>Overlap</strong></td><td>Shows a wrong output (undefined behavior) when the source and destination overlap.&nbsp;</td><td>Can handle overlaps by copying to a temporary array first.&nbsp;</td></tr><tr><td><strong>Performance&nbsp;</strong></td><td>Faster than memmove</td><td>Two times slower than memmove.</td></tr><tr><td><strong>Best to use</strong></td><td>In general use cases&nbsp;</td><td>When the source and destination overlap.</td></tr></tbody></table></figure>
+    
+    
+    
+    <h2 class="wp-block-heading">Memcpy vs memmove: Which is better?</h2>
+    
+    
+    
+    <p>Using memcpy or memmove depends on your data and whether the source and destination overlap.&nbsp;</p>
+    
+    
+    
+    <p>While the memcpy and memmove functions give the same results, it’s best to know how each works to ensure you use them correctly and effectively.&nbsp;</p>
+    
+    
+    
+    <p>Both C programming language functions make it easier to move your data but ensure you understand their limitations before you start copying and moving.&nbsp;</p>
+    
+    
+    
+    <p>Doing so helps you minimize potential data loss and avoid using an inefficient method to move large amounts of data.&nbsp;</p>
+    
+                                                                    </div>
